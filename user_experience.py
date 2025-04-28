@@ -49,6 +49,11 @@ def display_leaderboard(leaderboard):
     #------------------------
     # Add your code here
     #------------------------
+    l=[]
+    for value in leaderboard:
+        l.append(value)
+    l.sort(reverse=True)
+    print(l)
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
