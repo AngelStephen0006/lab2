@@ -17,6 +17,19 @@ def choose_difficulty():
     #------------------------
     # Add your code here
     #------------------------
+    n = int(input("choose a level:"))
+              
+    if n==1:
+        return 1
+    elif n==2:
+        return 2
+    elif n==3:
+        return 3
+    else:
+        print("Invalid input")
+        return 1
+    
+            
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
@@ -24,7 +37,7 @@ def choose_difficulty():
 
 def display_leaderboard(leaderboard):
     """
-    Displays the leaderboard, showing top scores in descending order.
+    Displays the leaderboard, showing top scores in descending order. #comment added 
 
     Parameters:
     - leaderboard (dict): A dictionary containing player names as keys and their scores as values.
@@ -139,6 +152,3 @@ def skip_question(allowed_skips):
     #------------------------
 
 #---------------------------------------
-
-
-
