@@ -30,7 +30,7 @@ def choose_difficulty():
         return 1
     
             
-    raise NotImplementedError("This function is not implemented yet.")
+    #raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
@@ -54,7 +54,7 @@ def display_leaderboard(leaderboard):
         l.append(value)
     l.sort(reverse=True)
     print(l)
-    raise NotImplementedError("This function is not implemented yet.")
+    #raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
@@ -93,7 +93,13 @@ def load_top_scores(file_path='scores.txt'):
     #------------------------
     # Add your code here
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    leaderboard={}
+    with open(file_path, 'r') as file:
+        for line in file:
+            player_name, score = line.strip().split(':')
+            leaderboard[player_name] = int(score)
+    return leaderboard
+    #raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
@@ -114,7 +120,11 @@ def provide_feedback(is_correct):
     #------------------------
     # Add your code here
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    if is_correct:
+        print("Well done!")
+    else:
+        print("Sorry, that's incorrect.")
+    #raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
@@ -135,7 +145,17 @@ def fifty_fifty_lifeline(correct_answer, options):
     #------------------------
     # Add your code here
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    incorrect_answer=[]
+    for word in range (options):
+        if word!= correct_answer:
+            incorrect_answer.append(word)
+    import random
+    c=random.shuffle(incorrect_answer)
+    print(c,correct_answer)
+            
+        
+        
+    #raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
@@ -155,7 +175,15 @@ def skip_question(allowed_skips):
     #------------------------
     # Add your code here
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    if allowed_skips >0:
+        allowed_skips -= 1
+        return True
+    else:
+        return False
+        
+        
+    #raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
+
